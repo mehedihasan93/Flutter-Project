@@ -240,7 +240,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Container(
             height: MediaQuery.of(context).size.height/15,
-            width: MediaQuery.of(context).size.width/4.5,
+            width: MediaQuery.of(context).size.width/3.5,
             decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.black26,
@@ -262,7 +262,7 @@ class _HomePageState extends State<HomePage> {
                     color: Color.fromRGBO(0, 0, 0, .5),
                   ),
                 label: Text(
-                    "Follow",
+                    "Following",
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w500,
@@ -295,7 +295,7 @@ class _HomePageState extends State<HomePage> {
                   color: Color.fromRGBO(0, 0, 0, .5),
                 ),
                 label: Text(
-                  "Following",
+                  "Follower",
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w500,
