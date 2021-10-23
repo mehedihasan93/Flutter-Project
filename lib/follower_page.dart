@@ -4,13 +4,13 @@ import 'package:untitled/home_page.dart';
 import 'package:untitled/models/follower_model.dart';
 
 List<Follower> followers =[
-  Follower(friends: 345, image: "images/Posts/Post_1.jpg", username: "Kazi Arafat"),
+  Follower(friends: 345, image: "images/Posts/Post_1.jpg", username: "Kazi Arafat Mishu"),
   Follower(friends: 675, image: "images/Posts/Post_2.jpg", username: "Abdur Rahman"),
   Follower(friends: 498, image: "images/Posts/Post_3.jpg", username: "Abir Hossain"),
   Follower(friends: 122, image: "images/Posts/Post_4.jpg", username: "Masudur Rahman"),
   Follower(friends: 56, image: "images/Posts/Post_5.jpg", username: "Yeasin Rahman"),
   Follower(friends: 23, image: "images/Posts/Post_6.jpg", username: "Morshedul Islam Babla"),
-  Follower(friends: 290, image: "images/Posts/Post_7.jpg", username: "Kabir Ali"),
+  Follower(friends: 290, image: "images/Posts/Post_7.jpg", username: "Kabir Ali Patoari"),
   Follower(friends: 178, image: "images/Posts/Post_8.png", username: "Hakimul Ezaz"),
   Follower(friends: 45, image: "images/Posts/Post_9.jpg", username: "Afif Hossain"),
   Follower(friends: 234, image: "images/Posts/Post_10.png", username: "Sheikh Yeamin"),
@@ -82,6 +82,7 @@ class _FollowerPageState extends State<FollowerPage> {
                     padding: EdgeInsets.symmetric(vertical: 15),
                    height: MediaQuery.of(context).size.height/7,
                     width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -92,7 +93,7 @@ class _FollowerPageState extends State<FollowerPage> {
 
                             Expanded(
                             child: Align(
-                              alignment: Alignment.center,
+                              alignment: Alignment.centerLeft,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
@@ -100,15 +101,15 @@ class _FollowerPageState extends State<FollowerPage> {
                                         "${followers[index].username}",
                                       style: TextStyle(
                                         fontWeight: FontWeight.w700,
-                                        fontSize: 20,
+                                        fontSize: 17,
                                         color: Color.fromRGBO(21, 34, 45, 1)
                                       ),
                                     ),
                                     SizedBox(height: 5,),
                                     Text(
-                                        "Friends: ${followers[index].friends}",
+                                        "Mutual Friends: ${followers[index].friends}",
                                       style: TextStyle(
-                                        fontSize: 15,
+                                        fontSize: 14,
                                         fontWeight: FontWeight.w500,
                                         color: Color.fromRGBO(86, 86, 90, 1),
                                       ),
