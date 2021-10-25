@@ -3,6 +3,7 @@ import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:untitled/home_page.dart';
+import 'package:untitled/timeline.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -75,7 +76,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                   onPressed: () {
                     Navigator.push(
-                      context,MaterialPageRoute(builder: (context)=> HomePage(),
+                      context,MaterialPageRoute(builder: (context)=> TimelinePage(),
                     ),
                     );
                   },

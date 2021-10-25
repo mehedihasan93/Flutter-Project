@@ -80,9 +80,8 @@ class _FollowerPageState extends State<FollowerPage> {
                 itemBuilder: (BuildContext context,int index){
                   return Container(
                     padding: EdgeInsets.symmetric(vertical: 15),
-                   height: MediaQuery.of(context).size.height/7,
+                   height: MediaQuery.of(context).size.height/6,
                     width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -94,28 +93,33 @@ class _FollowerPageState extends State<FollowerPage> {
                             Expanded(
                             child: Align(
                               alignment: Alignment.centerLeft,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                        "${followers[index].username}",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 17,
-                                        color: Color.fromRGBO(21, 34, 45, 1)
+
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                          "${followers[index].username}",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 17,
+                                          color: Color.fromRGBO(21, 34, 45, 1)
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(height: 5,),
-                                    Text(
-                                        "Mutual Friends: ${followers[index].friends}",
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w500,
-                                        color: Color.fromRGBO(86, 86, 90, 1),
+                                      SizedBox(height: 5,),
+                                      Text(
+                                          "Mutual Friends: ${followers[index].friends}",
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500,
+                                          color: Color.fromRGBO(86, 86, 90, 1),
+                                        ),
+                                        textAlign: TextAlign.start,
                                       ),
-                                      textAlign: TextAlign.start,
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                             ),
                           ),

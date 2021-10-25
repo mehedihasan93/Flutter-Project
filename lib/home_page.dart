@@ -5,6 +5,7 @@ import 'package:untitled/follower_page.dart';
 import 'package:untitled/following_page.dart';
 import 'package:untitled/posts_page.dart';
 import 'package:untitled/splash_screen.dart';
+import 'package:untitled/timeline.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class _HomePageState extends State<HomePage> {
       leading: IconButton(
           onPressed: () {
             Navigator.push(
-              context, MaterialPageRoute(builder: (context)=>SplashScreen(),
+              context, MaterialPageRoute(builder: (context)=>TimelinePage(),
             ),
             );
           },
@@ -182,7 +183,7 @@ class _HomePageState extends State<HomePage> {
                   child: Text(
                     "Hi! I'm Mehedi Hasan."
                     "Now I'm training on Flutter App Development"
-                    "under ICTD in Khulna",
+                    " under ICTD in Khulna",
                   style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.w400,
