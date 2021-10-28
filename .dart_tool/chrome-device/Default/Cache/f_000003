@@ -19,16 +19,16 @@ define("main_module.bootstrap", ["web_entrypoint.dart", "dart_sdk"], function(ap
          main();
       });
     }
-    window.$dartAppId = "l34HeyMgICPBRNesp0Sdyw==";
+    window.$dartAppId = "TC5x6olDvAPVOTKMgubgfg==";
 window.$dartReloadConfiguration = "ReloadConfiguration.none";
 window.$dartModuleStrategy = "require-js";
 window.$loadModuleConfig = require;
 window.$dwdsVersion = "11.0.2";
-window.$dwdsDevHandlerPath = "http://localhost:10226/$dwdsSseHandler";
+window.$dwdsDevHandlerPath = "http://localhost:10280/$dwdsSseHandler";
 window.$dwdsEnableDevtoolsLaunch = true;
 window.$dartEntrypointPath = "main_module.bootstrap.js";
 window.$requireLoader.forceLoadModule("dwds/src/injected/client");
-window.$dartExtensionUri = "http://127.0.0.1:10228/$debug";
+window.$dartExtensionUri = "http://127.0.0.1:10282/$debug";
 
   } else {
     if(window.$dartMainExecuted){
@@ -83,7 +83,8 @@ var baseUrl = (function () {
 let modulePaths = {
  "web_entrypoint.dart": "web_entrypoint.dart.lib",
  "packages/untitled/main.dart": "packages/untitled/main.dart.lib",
- "packages/untitled/posts_page.dart": "packages/untitled/posts_page.dart.lib",
+ "packages/untitled/timeline.dart": "packages/untitled/timeline.dart.lib",
+ "packages/untitled/models/timeline_model.dart": "packages/untitled/models/timeline_model.dart.lib",
  "packages/untitled/models/Posts_Model.dart": "packages/untitled/models/Posts_Model.dart.lib",
  "packages/flutter/cupertino.dart": "packages/flutter/cupertino.dart.lib",
  "packages/flutter/widgets.dart": "packages/flutter/widgets.dart.lib",
@@ -440,12 +441,15 @@ let modulePaths = {
  "packages/flutter/src/material/arc.dart": "packages/flutter/src/material/arc.dart.lib",
  "packages/flutter/src/material/app.dart": "packages/flutter/src/material/app.dart.lib",
  "packages/flutter/src/material/animated_icons.dart": "packages/flutter/src/material/animated_icons.dart.lib",
- "packages/flutter/src/material/about.dart": "packages/flutter/src/material/about.dart.lib"
+ "packages/flutter/src/material/about.dart": "packages/flutter/src/material/about.dart.lib",
+ "packages/untitled/models/following_model.dart": "packages/untitled/models/following_model.dart.lib",
+ "packages/untitled/models/follower_model.dart": "packages/untitled/models/follower_model.dart.lib"
 };
 let moduleNames = {
  "web_entrypoint.dart.lib": "web_entrypoint.dart",
  "packages/untitled/main.dart.lib": "packages/untitled/main.dart",
- "packages/untitled/posts_page.dart.lib": "packages/untitled/posts_page.dart",
+ "packages/untitled/timeline.dart.lib": "packages/untitled/timeline.dart",
+ "packages/untitled/models/timeline_model.dart.lib": "packages/untitled/models/timeline_model.dart",
  "packages/untitled/models/Posts_Model.dart.lib": "packages/untitled/models/Posts_Model.dart",
  "packages/flutter/cupertino.dart.lib": "packages/flutter/cupertino.dart",
  "packages/flutter/widgets.dart.lib": "packages/flutter/widgets.dart",
@@ -802,7 +806,9 @@ let moduleNames = {
  "packages/flutter/src/material/arc.dart.lib": "packages/flutter/src/material/arc.dart",
  "packages/flutter/src/material/app.dart.lib": "packages/flutter/src/material/app.dart",
  "packages/flutter/src/material/animated_icons.dart.lib": "packages/flutter/src/material/animated_icons.dart",
- "packages/flutter/src/material/about.dart.lib": "packages/flutter/src/material/about.dart"
+ "packages/flutter/src/material/about.dart.lib": "packages/flutter/src/material/about.dart",
+ "packages/untitled/models/following_model.dart.lib": "packages/untitled/models/following_model.dart",
+ "packages/untitled/models/follower_model.dart.lib": "packages/untitled/models/follower_model.dart"
 };
 if(!window.$requireLoader) {
    window.$requireLoader = {

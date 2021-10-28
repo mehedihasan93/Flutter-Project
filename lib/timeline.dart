@@ -221,7 +221,7 @@ class _TimelinePageState extends State<TimelinePage> {
                                   ),
                                   Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                                        padding: const EdgeInsets.symmetric(horizontal: 10),
                                         child: Text(
                                           "${timelinemodels[index].address}",
                                           style: TextStyle(
@@ -258,7 +258,7 @@ class _TimelinePageState extends State<TimelinePage> {
                              //Caption image container
 
                              Container(
-                               height: MediaQuery.of(context).size.height/3,
+                               height: MediaQuery.of(context).size.height/3.9,
                                width: MediaQuery.of(context).size.width,
                                decoration: BoxDecoration(
                                  image: DecorationImage(
@@ -267,6 +267,96 @@ class _TimelinePageState extends State<TimelinePage> {
                                    fit: BoxFit.fill
                                  ),
                                  borderRadius: BorderRadius.circular(12),
+                               ),
+                             ),
+
+                             //Flat button Container
+
+                             Container(
+                               padding: EdgeInsets.symmetric(horizontal: 10),
+                               height: MediaQuery.of(context).size.height/8,
+                               width: MediaQuery.of(context).size.width,
+                               child: Row(
+                                 children: [
+                                   Container(
+                                     height: MediaQuery.of(context).size.height/15,
+                                     width: MediaQuery.of(context).size.width/3.5,
+                                     decoration: BoxDecoration(
+                                       border: Border.all(
+                                         color: Color.fromRGBO(245, 245, 245, .6),
+                                         width: 3,
+                                         style: BorderStyle.solid,
+                                       ),
+                                     ),
+                                     child: FlatButton.icon(
+                                         onPressed: (){},
+                                         icon: Icon(CupertinoIcons.heart,
+                                           color: Color.fromRGBO(21, 21, 21, 1),
+                                           size: 15,
+                                         ),
+                                         label: Text("${timelinemodels[index].likes} Likes",
+                                           style: TextStyle(
+                                             color: Color.fromRGBO(21, 21, 21, 1),
+                                             fontWeight: FontWeight.w400,
+                                             fontSize: 15,
+                                           ),
+                                         ),
+                                     ),
+                                   ),
+                                   Container(
+                                     padding: EdgeInsets.symmetric(horizontal: 12),
+                                     height: MediaQuery.of(context).size.height/15,
+                                     width: MediaQuery.of(context).size.width/3,
+                                     decoration: BoxDecoration(
+                                       border: Border.all(
+                                         color: Color.fromRGBO(245, 245, 245, 1),
+                                         width: 3,
+                                         style: BorderStyle.solid
+                                       ),
+                                     ),
+                                     child: FlatButton.icon(
+                                         onPressed: () {},
+                                         icon: Icon(Icons.message_outlined,
+                                           size: 13,
+                                             color: Color.fromRGBO(21, 21, 21, 1),
+                                         ),
+                                         label: Text(
+                                             "Comments",
+                                           style: TextStyle(
+                                             color: Color.fromRGBO(21, 21, 21, 1),
+                                             fontSize: 15,
+                                             fontWeight: FontWeight.w400
+                                           ),
+                                         ),
+                                     ),
+                                   ),
+                                   Container(
+                                     height: MediaQuery.of(context).size.height/15,
+                                     width: MediaQuery.of(context).size.width/4,
+                                     decoration: BoxDecoration(
+                                       border: Border.all(
+                                           color: Color.fromRGBO(245, 245, 245, 1),
+                                           width: 3,
+                                           style: BorderStyle.solid
+                                       ),
+                                     ),
+                                     child: FlatButton.icon(
+                                       onPressed: () {},
+                                       icon: Icon(Icons.share,
+                                         size: 13,
+                                         color: Color.fromRGBO(21, 21, 21, 1),
+                                       ),
+                                       label: Text(
+                                         "Share",
+                                         style: TextStyle(
+                                             color: Color.fromRGBO(21, 21, 21, 1),
+                                             fontSize: 15,
+                                             fontWeight: FontWeight.w400
+                                         ),
+                                       ),
+                                     ),
+                                   ),
+                                 ],
                                ),
                              ),
                            ],
