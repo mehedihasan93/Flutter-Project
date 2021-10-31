@@ -17,7 +17,7 @@ List<String> images = [
   "images/Posts/Post_7.jpg",
   "images/Posts/Post_8.png",
   "images/Posts/Post_9.jpg",
-  "images/Posts/Post_1o.png",
+  "images/Posts/Post_10.png",
 ];
 
 class HomePage extends StatefulWidget {
