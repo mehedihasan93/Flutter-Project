@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:untitled/edit_page.dart';
 import 'package:untitled/follower_page.dart';
 import 'package:untitled/following_page.dart';
+import 'package:untitled/messenger.dart';
 import 'package:untitled/posts_page.dart';
 import 'package:untitled/timeline.dart';
 
@@ -106,14 +107,18 @@ class _HomePageState extends State<HomePage> {
             width: MediaQuery.of(context).size.width,
             child: Column(
               children: [
+
                 // User name and profile image Container start
+
                 Container(
                   height: MediaQuery.of(context).size.height / 5.5,
                   width: MediaQuery.of(context).size.width,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
+
                       // Profile Image Container
+
                       Container(
                         height: MediaQuery.of(context).size.height / 6,
                         width: MediaQuery.of(context).size.width / 5,
@@ -133,6 +138,7 @@ class _HomePageState extends State<HomePage> {
                       ),
 
                       // Address And Bio Container
+
                       Container(
                         width: MediaQuery.of(context).size.width / 1.5,
                         height: MediaQuery.of(context).size.height / 7,
@@ -166,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
-                //bio container
+                //Bio container
 
                 Container(
                   height: MediaQuery.of(context).size.height / 2.6,
@@ -231,119 +237,168 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
-                //Edit Profile , Follow , Following
+                //Edit Profile, Posts, Follower, Following, Messenger
 
                 Container(
-                  height: MediaQuery.of(context).size.height / 13,
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  height: MediaQuery.of(context).size.height / 5,
                   width: MediaQuery.of(context).size.width,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  child: Wrap(
+                    runSpacing: 10,
+                    direction: Axis.horizontal,
+                    alignment: WrapAlignment.spaceBetween,
+                    crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
-                      Container(
-                        height: MediaQuery.of(context).size.height / 15,
-                        width: MediaQuery.of(context).size.width / 4,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black26,
-                            width: 3,
-                            style: BorderStyle.solid,
+
+                      //Posts Flat Button Container
+
+                        Container(
+                          height: MediaQuery.of(context).size.height / 15,
+                          width: MediaQuery.of(context).size.width / 4,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.black26,
+                              width: 3,
+                              style: BorderStyle.solid,
+                            ),
                           ),
-                        ),
-                        child: FlatButton.icon(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => PostsPage(),
-                              ),
-                            );
-                          },
-                          icon: Icon(
-                            Icons.post_add,
-                            size: 15,
-                            color: Color.fromRGBO(0, 0, 0, .7),
-                          ),
-                          label: Text(
-                            "Posts",
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
+                          child: FlatButton.icon(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => PostsPage(),
+                                ),
+                              );
+                            },
+                            icon: Icon(
+                              Icons.post_add,
+                              size: 15,
                               color: Color.fromRGBO(0, 0, 0, .7),
+                            ),
+                            label: Text(
+                              "Posts",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                color: Color.fromRGBO(0, 0, 0, .7),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      Container(
-                        height: MediaQuery.of(context).size.height / 15,
-                        width: MediaQuery.of(context).size.width / 3.5,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black26,
-                            width: 3,
-                            style: BorderStyle.solid,
-                          ),
-                        ),
-                        child: FlatButton.icon(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => FollowerPage(),
-                              ),
-                            );
-                          },
-                          icon: Icon(
-                            Icons.follow_the_signs_outlined,
-                            size: 15,
-                            color: Color.fromRGBO(0, 0, 0, .7),
-                          ),
-                          label: Text(
-                            "Follower",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 15,
-                                color: Color.fromRGBO(0, 0, 0, .7)),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: MediaQuery.of(context).size.height / 15,
-                        width: MediaQuery.of(context).size.width / 3.2,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black26,
-                            width: 3,
-                            style: BorderStyle.solid,
-                          ),
-                        ),
-                        child: FlatButton.icon(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => FollowingPage(),
-                              ),
-                            );
-                          },
-                          icon: Icon(
-                            Icons.add_circle_outline,
-                            size: 15,
-                            color: Color.fromRGBO(0, 0, 0, 0.7),
-                          ),
-                          label: Text(
-                            'Following',
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w500,
-                                color: Color.fromRGBO(0, 0, 0, .7)),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
 
-                //photo Gallery container
+                        //Follower Flat Button Container
+
+                        Container(
+                          height: MediaQuery.of(context).size.height / 15,
+                          width: MediaQuery.of(context).size.width / 3.5,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.black26,
+                              width: 3,
+                              style: BorderStyle.solid,
+                            ),
+                          ),
+                          child: FlatButton.icon(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => FollowerPage(),
+                                ),
+                              );
+                            },
+                            icon: Icon(
+                              Icons.follow_the_signs_outlined,
+                              size: 15,
+                              color: Color.fromRGBO(0, 0, 0, .7),
+                            ),
+                            label: Text(
+                              "Follower",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 15,
+                                  color: Color.fromRGBO(0, 0, 0, .7)),
+                            ),
+                          ),
+                        ),
+
+                        //Following Flat Button Container
+
+                        Container(
+                          height: MediaQuery.of(context).size.height / 15,
+                          width: MediaQuery.of(context).size.width / 3.2,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.black26,
+                              width: 3,
+                              style: BorderStyle.solid,
+                            ),
+                          ),
+                          child: FlatButton.icon(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => FollowingPage(),
+                                ),
+                              );
+                            },
+                            icon: Icon(
+                              Icons.add_circle_outline,
+                              size: 15,
+                              color: Color.fromRGBO(0, 0, 0, 0.7),
+                            ),
+                            label: Text(
+                              'Following',
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color.fromRGBO(0, 0, 0, .7)),
+                            ),
+                          ),
+                        ),
+
+                        //Messenger Flat Button Container
+
+                        Container(
+                          height: MediaQuery.of(context).size.height / 15,
+                          width: MediaQuery.of(context).size.width / 3.2,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.black26,
+                              width: 3,
+                              style: BorderStyle.solid,
+                            ),
+                          ),
+                          child: FlatButton.icon(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => MessengerPage(),
+                                ),
+                              );
+                            },
+                            icon: Icon(
+                              CupertinoIcons.chat_bubble_2_fill,
+                              size: 15,
+                              color: Color.fromRGBO(0, 0, 0, 0.7),
+                            ),
+                            label: Text(
+                              'Messenger',
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color.fromRGBO(0, 0, 0, .7)),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                //Photo Gallery container
 
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
