@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:untitled/home_page.dart';
 
+import 'models/messenger_model.dart';
+
 List<String> images = [
   "images/profile_images/user_1.jpg",
   "images/profile_images/user_2.jpg",
@@ -15,6 +17,19 @@ List<String> images = [
   "images/profile_images/user_10.jpg",
   "images/Female_Profile_Icon.jpg",
   "images/Profile_Icon.jpg"
+];
+
+List<MessengerModel> messengerModels = [
+  MessengerModel(username: "Abdur Razzak", lastmessage: "Hi!", userImageUrl: "images/Profile_Images/user_1.jpg",),
+  MessengerModel(username: "chanchal choudhary", lastmessage: "How are you?", userImageUrl: "images/Profile_Images/user_2.jpg",),
+  MessengerModel(username: "Fazlur Rahman Babu", lastmessage: "How do you do?", userImageUrl: "images/Profile_Images/user_3.jpg",),
+  MessengerModel(username: "Siam Ahmed", lastmessage: "Let's go for long drive", userImageUrl: "images/Profile_Images/user_4.jpg",),
+  MessengerModel(username: "Arfan Nishu", lastmessage: "Valo asen vai?", userImageUrl: "images/Profile_Images/user_5.jpg",),
+  MessengerModel(username: "Ziaul Faruq Apurba", lastmessage: "What's up?", userImageUrl: "images/Profile_Images/user_6.jpg",),
+  MessengerModel(username: "Ziaul Hoque Polash", lastmessage: "Tumi ki kro?", userImageUrl: "images/Profile_Images/user_7.jpg",),
+  MessengerModel(username: "Tasnia Farin", lastmessage: "Hi! there", userImageUrl: "images/Profile_Images/user_8.jpg",),
+  MessengerModel(username: "Nusrat Imrose Tisha", lastmessage: "Amar sathe tumi dekha korbe?", userImageUrl: "images/Profile_Images/user_9.jpg",),
+  MessengerModel(username: "Joya Ahsan", lastmessage: "Where are you right now?", userImageUrl: "images/Profile_Images/user_10.jpg",),
 ];
 
 class MessengerPage extends StatefulWidget {
@@ -90,26 +105,102 @@ class _MessengerPageState extends State<MessengerPage> {
               ),
             ),
           ),
+
+          //friend list view builder SliverToBoxAdapter
+
+          SliverToBoxAdapter(
+            child: Container(
+              height: MediaQuery.of(context).size.height/10,
+              width: MediaQuery.of(context).size.width,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: images.length,
+                  itemBuilder: (BuildContext context, int index){
+                  return Container(
+                    margin: EdgeInsets.symmetric(horizontal: 2),
+                    height: MediaQuery.of(context).size.height/5,
+                    width: MediaQuery.of(context).size.width/5,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: AssetImage("${images[index]}"),
+                        fit: BoxFit.fill,
+                      ),
+                      border: Border.all(
+                        color: Color.fromRGBO(10, 255, 10, 1),
+                        width: 3,
+                        style: BorderStyle.solid,
+                      ),
+                    ),
+                  );
+                  }
+              ),
+            ),
+          ),
+
+          //Message text SliverToBoxAdapter
+
+          SliverToBoxAdapter(
+            child: Container(
+              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              height: MediaQuery.of(context).size.height/15,
+              width: MediaQuery.of(context).size.width,
+              child: Text(
+                "Messages",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: Color.fromRGBO(21, 21, 21, 1),
+                ),
+              ),
+            ),
+          ),
           SliverList(
             delegate: SliverChildBuilderDelegate((BuildContext context,int index){
               return Container(
-               height: MediaQuery.of(context).size.height/5,
-               width: MediaQuery.of(context).size.width/5,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("${images[index]}"),
-                    fit: BoxFit.scaleDown,
-                  ),
-                  border: Border.all(
-                    style: BorderStyle.solid,
-                    width: 3,
-                    color: Color.fromRGBO(0, 0, 0, .6),
-                  ),
-                  shape: BoxShape.circle,
+               height: MediaQuery.of(context).size.height/6,
+               width: MediaQuery.of(context).size.width,
+                child: Row(
+                  children: [
+                    Stack(
+                      children: [
+                        CircleAvatar(
+                          radius: 40,
+                          backgroundImage: AssetImage("${messengerModels[index].userImageUrl}"
+                          ),
+                        ),
+                        Positioned(
+                          top: MediaQuery.of(context).size.height/10,
+                            left: MediaQuery.of(context).size.height/11,
+                            child: CircleAvatar(
+                              radius: 7,
+                              backgroundColor: Color.fromRGBO(10, 255, 10, 1),
+                            ))
+                      ],
+                    ),
+
+                    Container(
+                      height: MediaQuery.of(context).size.height,
+                      width: MediaQuery.of(context).size.width,
+                      child: RichText(
+                        textAlign: TextAlign.justify,
+                        text: TextSpan(
+                          text: ,
+                          style: ,
+                          children: [
+                            TextSpan(
+                              text: ,
+                              style: ,
+                            ),
+                          ]
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               );
             },
-            childCount: images.length,
+            childCount: messengerModels.length,
             ),
           ),
         ],
