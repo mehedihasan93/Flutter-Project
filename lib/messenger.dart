@@ -92,8 +92,8 @@ class _MessengerPageState extends State<MessengerPage> {
         slivers: [
           SliverToBoxAdapter(
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-              height: MediaQuery.of(context).size.height/15,
+              margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              height: MediaQuery.of(context).size.height/25,
               width: MediaQuery.of(context).size.width,
               child: Text(
                 "Friends",
@@ -143,7 +143,7 @@ class _MessengerPageState extends State<MessengerPage> {
           SliverToBoxAdapter(
             child: Container(
               margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-              height: MediaQuery.of(context).size.height/15,
+              height: MediaQuery.of(context).size.height/25,
               width: MediaQuery.of(context).size.width,
               child: Text(
                 "Messages",
@@ -158,8 +158,9 @@ class _MessengerPageState extends State<MessengerPage> {
           SliverList(
             delegate: SliverChildBuilderDelegate((BuildContext context,int index){
               return Container(
-               height: MediaQuery.of(context).size.height/6,
+               height: MediaQuery.of(context).size.height/8,
                width: MediaQuery.of(context).size.width,
+                margin: EdgeInsets.symmetric(vertical: 8),
                 child: Row(
                   children: [
                     Stack(
@@ -175,27 +176,41 @@ class _MessengerPageState extends State<MessengerPage> {
                             child: CircleAvatar(
                               radius: 7,
                               backgroundColor: Color.fromRGBO(10, 255, 10, 1),
-                            ))
+                            ),
+                        ),
                       ],
                     ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height,
+                            width: MediaQuery.of(context).size.width/1.5,
 
-                    Container(
-                      height: MediaQuery.of(context).size.height,
-                      width: MediaQuery.of(context).size.width,
-                      child: RichText(
-                        textAlign: TextAlign.justify,
-                        text: TextSpan(
-                          text: ,
-                          style: ,
-                          children: [
-                            TextSpan(
-                              text: ,
-                              style: ,
+
+                            child: RichText(
+                              textAlign: TextAlign.justify,
+                              text: TextSpan(
+                                text: "${messengerModels[index].username}\n",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                  height: 1.5,
+                                  color: Color.fromRGBO(21,21,21,1),
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text: "${messengerModels[index].lastmessage}",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                      color: Color.fromRGBO(21, 21, 21, .6),
+                                    ),
+                                  ),
+                                ]
+                              ),
                             ),
-                          ]
+                          ),
                         ),
-                      ),
-                    ),
                   ],
                 ),
               );
